@@ -97,7 +97,7 @@ final class BlueCatsIBeaconInterface: NSObject, BeaconInterface {
             }
             
             if !BlueCatsSDK.isLocationAuthorized() {
-                BlueCatsSDK.requestAlwaysLocationAuthorization()
+                BlueCatsSDK.requestWhenInUseLocationAuthorization()
             }
             
             guard BlueCatsSDK.isNetworkReachable() else {
