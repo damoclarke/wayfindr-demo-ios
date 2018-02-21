@@ -100,16 +100,6 @@ final class BlueCatsIBeaconInterface: NSObject, BeaconInterface {
                 BlueCatsSDK.requestWhenInUseLocationAuthorization()
             }
             
-            guard BlueCatsSDK.isNetworkReachable() else {
-                completionHandler?(false, .failedInitialization(localizedDescription: WAYStrings.ErrorMessages.NoInternet))
-                return
-            }
-            
-            guard BlueCatsSDK.isBluetoothEnabled() else {
-                completionHandler?(false, .failedInitialization(localizedDescription: WAYStrings.ErrorMessages.UnableMonitor))
-                return
-            }
-            
             completionHandler?(true, nil)
         })
     }
